@@ -5,17 +5,33 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    background-image: url('./images/welcome.jpg'); 
   }
   
   /* Header styles */
   .header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #a7d7f1; /* Example background color */
+    max-height: 40px;
+    font-family: 'Times New Roman', Times, serif;
   }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-text {
+    margin-left: 20px; /* Adjust margin for spacing */
+    font-size: 1.5rem; /* Example font size */
+  }
+  
+
+ 
+  
   
   .header .logo img {
     height: 50px;
