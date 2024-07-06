@@ -11,6 +11,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 import 'pdfjs-dist/webpack'; // Correct import for pdfjs-dist
 import { PDFDocument } from 'pdf-lib';
 
+
 registerPlugin(FilePondPluginFileValidateType);
 
 function HomePage() {
