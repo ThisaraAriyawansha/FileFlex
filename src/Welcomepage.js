@@ -1,44 +1,98 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom'; // Assuming React Router is used for navigation
-import './WelcomePage.css'; // Import CSS file for styling
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilePdf, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import './WelcomePage.css';
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 50,
+      damping: 10,
+    },
+  },
+};
+
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    transition: {
+      yoyo: Infinity, // yoyo animation to create a pulsating effect
+    },
+  },
+};
 
 const FileFlexWelcomePage = () => {
   return (
     <div className="fileflex-welcome-page">
-<header className="header">
-  <nav className="navigation">
-    <p className="logo-text">FileFlex</p>
-  </nav>
-</header>
-
-
-
+      <header className="header">
+        <nav className="navigation">
+          <p className="logo-text">FileFlex</p>
+        </nav>
+      </header>
 
       <main className="main-content">
         <section className="welcome-banner">
-          <h1 className="title">FileFlex</h1>
-          <p className="subtitle">Your Document Conversion and Analysis Tool</p>
+          <motion.h1
+            className="title"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            FileFlex
+          </motion.h1>
+          <motion.p
+            className="subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Your Document Conversion and Analysis Tool
+          </motion.p>
         </section>
 
         <section className="features-section">
-          <div className="feature-card">
-            <img src="/conversion-icon.png" alt="Document Conversion Icon" className="feature-icon" />
+          <motion.div
+            className="feature-card"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <FontAwesomeIcon icon={faFilePdf} className="feature-icon" />
             <h2 className="feature-title">Document Conversion</h2>
             <p className="feature-description">Convert PDF files to DOCX and vice versa.</p>
-            <Link to="/homePage" className="feature-btn">Convert Now</Link>
-          </div>
+            <motion.div variants={buttonVariants} whileHover="hover">
+              <Link to="/homePage" className="feature-btn">Convert Now</Link>
+            </motion.div>
+          </motion.div>
 
-          <div className="feature-card">
-            <img src="/analysis-icon.png" alt="Document Analysis Icon" className="feature-icon" />
+          <motion.div
+            className="feature-card"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
+          >
+            <FontAwesomeIcon icon={faFileAlt} className="feature-icon" />
             <h2 className="feature-title">Document Analysis</h2>
             <p className="feature-description">Analyze and extract insights from documents.</p>
-            <Link to="/analyze" className="feature-btn">Analyze Document</Link>
-          </div>
+            <motion.div variants={buttonVariants} whileHover="hover">
+              <Link to="/analyze" className="feature-btn">Analyze Document</Link>
+            </motion.div>
+          </motion.div>
         </section>
       </main>
+
+      <footer className="footer">
+        <p>&copy; 2024 FileFlex. All rights reserved.</p>
+      </footer>
     </div>
   );
-}
+};
 
 export default FileFlexWelcomePage;
