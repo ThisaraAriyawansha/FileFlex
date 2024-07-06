@@ -8,7 +8,7 @@ body {
   }
   
   /* Header styles */
-  .header {
+  .headerr {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,20 +52,24 @@ body {
   
   .features-section {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around; /* Adjust spacing between cards */
   }
   
   .feature-card {
+    align-items: center;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    width: 45%;
+    /* width: 45%; Remove this line to allow flexible sizing */
     margin-bottom: 30px;
     transition: box-shadow 0.3s ease;
+    flex: 1; /* Allow cards to grow to fit available space */
+    margin-right: 100px;
   }
+  
   
   .feature-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);

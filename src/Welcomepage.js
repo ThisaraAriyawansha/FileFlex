@@ -30,7 +30,7 @@ const buttonVariants = {
 const FileFlexWelcomePage = () => {
   return (
     <div className="fileflex-welcome-page">
-      <header className="header">
+      <header className="headerr">
         <nav className="navigation">
           <p className="logo-text">FileFlex</p>
         </nav>
@@ -57,34 +57,24 @@ const FileFlexWelcomePage = () => {
         </section>
 
         <section className="features-section">
-          <motion.div
-            className="feature-card"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <FontAwesomeIcon icon={faFilePdf} className="feature-icon" />
-            <h2 className="feature-title">Document Conversion</h2>
-            <p className="feature-description">Convert PDF files to DOCX and vice versa.</p>
-            <motion.div variants={buttonVariants} whileHover="hover">
-              <Link to="/homePage" className="feature-btn">Convert Now</Link>
-            </motion.div>
-          </motion.div>
+        <motion.div className="feature-card" variants={containerVariants} initial="hidden" animate="visible">
+  <FontAwesomeIcon icon={faFilePdf} className="feature-icon" />
+  <h2 className="feature-title">Document Conversion</h2>
+  <p className="feature-description">Convert PDF files to DOCX and vice versa.</p>
+  <motion.div variants={buttonVariants} whileHover="hover">
+    <Link to="/homePage" className="feature-btn">Convert Now</Link>
+  </motion.div>
+</motion.div>
 
-          <motion.div
-            className="feature-card"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.3 }}
-          >
-            <FontAwesomeIcon icon={faFileAlt} className="feature-icon" />
-            <h2 className="feature-title">Document Analysis</h2>
-            <p className="feature-description">Analyze and extract insights from documents.</p>
-            <motion.div variants={buttonVariants} whileHover="hover">
-              <Link to="/analyze" className="feature-btn">Analyze Document</Link>
-            </motion.div>
-          </motion.div>
+<motion.div className="feature-card" variants={containerVariants} initial="hidden" animate="visible" transition={{ delay: 0.3 }}>
+  <FontAwesomeIcon icon={faFileAlt} className="feature-icon" />
+  <h2 className="feature-title">Document Analysis</h2>
+  <p className="feature-description">Analyze and extract insights from documents.</p>
+  <motion.div variants={buttonVariants} whileHover="hover">
+    <Link to="/analyze" className="feature-btn">Analyze Document</Link>
+  </motion.div>
+</motion.div>
+
         </section>
       </main>
 
