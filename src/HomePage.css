@@ -1,0 +1,58 @@
+.home-page {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-image: url('./images/welcome.jpg'); /* Adjust path based on your project structure */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the entire viewport */
+  }
+  
+  h1 {
+    font-size: 36px; /* Increased font size */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Change font family */
+    color: #333; /* Darker color for better contrast */
+    animation: fadeInUp 1s ease-out; /* Animation for fade in */
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .convert-btn {
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .convert-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .filepond--root {
+    margin-bottom: 20px;
+  }
+  
+  .filepond--label-action {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
