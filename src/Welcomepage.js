@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import './WelcomePage.css';
+import Navbar from './Navbar';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -29,16 +30,10 @@ const buttonVariants = {
 
 const FileFlexWelcomePage = () => {
   return (
+    <div>
+      <Navbar/>
     <div className="fileflex-welcome-page">
-      <header className="headerr">
-        <nav className="navigation">
-          <p className="logo-text">FileFlex</p>
-          <div className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-          </div>
-        </nav>
-      </header>
+
 
       <main className="main-content">
         <section className="welcome-banner">
@@ -82,7 +77,9 @@ const FileFlexWelcomePage = () => {
         </section>
       </main>
 
-      <footer className="footer">
+      
+    </div>
+    <footer className="footer">
         <p>&copy; 2024 FileFlex. All rights reserved.</p>
       </footer>
     </div>

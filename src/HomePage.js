@@ -10,6 +10,7 @@ import './HomePage.css'; // Import CSS file
 import * as pdfjsLib from 'pdfjs-dist';
 import 'pdfjs-dist/webpack'; // Correct import for pdfjs-dist
 import { PDFDocument } from 'pdf-lib';
+import Navbar from './Navbar';
 
 
 registerPlugin(FilePondPluginFileValidateType);
@@ -114,11 +115,7 @@ function HomePage() {
 
   return (
     <div className='qq'>
-              <header className="headerr">
-        <nav className="navigation">
-          <p className="logo-text">FileFlex</p>
-        </nav>
-      </header>
+<Navbar/>
     
     <div className="home-page">
 

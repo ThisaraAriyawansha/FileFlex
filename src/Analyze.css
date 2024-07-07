@@ -1,5 +1,6 @@
+/* General styles */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
@@ -15,10 +16,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Adjust padding as needed */
-  background-color: #a7d7f1; /* Example background color */
+  padding: 10px 20px;
+  background-color: #a7d7f1;
   max-height: 40px;
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .main-content {
@@ -69,10 +69,13 @@ input[type="file"] {
 
 .paper {
   padding: 20px;
-  height: 400px; /* Adjust height to make both sections equal */
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .document-preview {
@@ -89,4 +92,26 @@ button {
   background-color: #a7d7f1;
   color: #fff;
   text-align: center;
+}
+
+/* Additional modern styles */
+.typography-header {
+  font-family: 'Times New Roman', Times, serif;
+  color: #333;
+}
+
+.typography-body {
+  font-family: 'Times New Roman', Times, serif;
+  color: #555;
+}
+
+.btn-primary {
+  background-color: #1976d2;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #155a9a;
 }

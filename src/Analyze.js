@@ -4,6 +4,7 @@ import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import 'pdfjs-dist/web/pdf_viewer.css';
 import { Container, Grid, Typography, Box, CircularProgress, Paper, Button } from '@mui/material';
 import './Analyze.css';
+import Navbar from './Navbar';
 
 const App = () => {
   const [file, setFile] = useState(null);
@@ -29,14 +30,14 @@ const App = () => {
     setWordCount(0);
     setParagraphCount(0);
     setFullText('');
-    setShowResult(false); // Reset the result view when a new file is selected
+    setShowResult(false);
   };
 
   const handleProcessClick = async () => {
     if (!file) return;
     setProcessing(true);
     setLoading(true);
-    setShowResult(false); // Hide the result view during processing
+    setShowResult(false);
 
     let text = '';
     if (file.type === 'application/pdf') {
@@ -48,7 +49,7 @@ const App = () => {
     analyzeText(text);
     setLoading(false);
     setProcessing(false);
-    setShowResult(true); // Show the result view after processing
+    setShowResult(true);
   };
 
   const extractTextFromPDF = async (file) => {
@@ -92,21 +93,17 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <header className="headerr">
-        <nav className="navigation">
-          <p className="logo-text">FileFlex</p>
-        </nav>
-      </header>
+      <Navbar />
       <Container maxWidth="lg" className="main-content">
         <Box my={4}>
-          <Typography variant="h3" component="h1" align="center" gutterBottom>
+          <Typography variant="h3" component="h1" align="center" gutterBottom className="typography-header">
             Document Analyzer
           </Typography>
           <Box my={2} display="flex" justifyContent="center">
             <input type="file" onChange={handleFileChange} accept=".pdf, .docx" />
           </Box>
           <Box my={2} display="flex" justifyContent="center">
-            <Button variant="contained" color="primary" onClick={handleProcessClick} disabled={!file || processing}>
+            <Button variant="contained" color="primary" onClick={handleProcessClick} disabled={!file || processing} className="btn-primary">
               {processing ? 'Processing...' : 'Process'}
             </Button>
           </Box>
@@ -118,20 +115,20 @@ const App = () => {
             showResult && (
               <Grid container spacing={4} className="result-container">
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={3} className="paper document-preview-container">
-                    <Typography variant="h6">Document Preview</Typography>
+                  <Paper elevation={3} className="paper">
+                    <Typography variant="h6" className="typography-header">Document Preview</Typography>
                     <Box mt={2} className="document-preview">
-                      <Typography variant="body1">{fullText}</Typography>
+                      <Typography variant="body1" className="typography-body">{fullText}</Typography>
                     </Box>
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={3} className="paper analysis-container">
-                    <Typography variant="h6">Document Analysis</Typography>
+                  <Paper elevation={3} className="paper">
+                    <Typography variant="h6" className="typography-header">Document Analysis</Typography>
                     <Box mt={2}>
-                      <Typography variant="body1"><strong>File Name:</strong> {file.name}</Typography>
-                      <Typography variant="body1"><strong>Word Count:</strong> {wordCount}</Typography>
-                      <Typography variant="body1"><strong>Paragraph Count:</strong> {paragraphCount}</Typography>
+                      <Typography variant="body1" className="typography-body"><strong>File Name:</strong> {file.name}</Typography>
+                      <Typography variant="body1" className="typography-body"><strong>Word Count:</strong> {wordCount}</Typography>
+                      <Typography variant="body1" className="typography-body"><strong>Paragraph Count:</strong> {paragraphCount}</Typography>
                     </Box>
                   </Paper>
                 </Grid>
