@@ -33,6 +33,10 @@ const FileFlexWelcomePage = () => {
       <header className="headerr">
         <nav className="navigation">
           <p className="logo-text">FileFlex</p>
+          <div className="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+          </div>
         </nav>
       </header>
 
