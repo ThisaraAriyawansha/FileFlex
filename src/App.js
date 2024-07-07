@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import Welcomepage from './Welcomepage';
 import Analyze from './Analyze';
 import './App.css';
+import Navbar from './Navbar';
 
 // Example of creating a context
 const MyContext = React.createContext();
@@ -18,6 +19,8 @@ function App() {
             <Route path="/" element={<Welcomepage />} />
             <Route path="/homePage" element={<HomePage />} />
             <Route path="/analyze" element={<Analyze />} />
+            <Route path="/navbar" element={<Navbar />} />
+
           </Routes>
         </MyContext.Provider>
       </div>
