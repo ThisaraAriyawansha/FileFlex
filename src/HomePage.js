@@ -113,7 +113,15 @@ function HomePage() {
   };
 
   return (
+    <div className='qq'>
+              <header className="headerr">
+        <nav className="navigation">
+          <p className="logo-text">FileFlex</p>
+        </nav>
+      </header>
+    
     <div className="home-page">
+
       <h1>Document Converter</h1>
       <FilePond
         files={files}
@@ -129,6 +137,11 @@ function HomePage() {
         onClick={handleConvert}
         className="convert-btn"
       />
+
+    </div>
+    <footer className="footer">
+        <p>&copy; 2024 FileFlex. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
