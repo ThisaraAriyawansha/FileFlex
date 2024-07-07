@@ -8,6 +8,8 @@
     border-bottom: 1px solid #ddd;
     animation: navbarSlideIn 0.5s ease-in-out;
     font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+
   }
   
   @keyframes navbarSlideIn {
