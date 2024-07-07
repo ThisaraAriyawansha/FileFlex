@@ -97,7 +97,7 @@ const App = () => {
       <Container maxWidth="lg" className="main-content">
         <Box my={4}>
           <Typography variant="h3" component="h1" align="center" gutterBottom className="typography-header">
-            Document Analyzer
+            <h1>Document Analyzer</h1>
           </Typography>
           <Box my={2} display="flex" justifyContent="center">
             <input type="file" onChange={handleFileChange} accept=".pdf, .docx" />
