@@ -101,18 +101,24 @@ function HomePage() {
   };
 
   return (
+    <div className='qq'>
+          <Navbar />
     <div className="home-page">
-      <Navbar />
-      <h1>Document Converter</h1>
-      <FilePond
-        files={files}
-        allowMultiple={false}
-        onupdatefiles={setFiles}
-        acceptedFileTypes={['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']}
-        labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-      />
-      <button className="convert-button" onClick={handleConvert}>Convert</button>
-      <footer className="footer">
+  
+      <div className="content">
+        <h1 className="main-heading">Document Converter</h1>
+        <FilePond
+          files={files}
+          allowMultiple={false}
+          onupdatefiles={setFiles}
+          acceptedFileTypes={['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']}
+          labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+        />
+        <button className="convert-button" onClick={handleConvert}>Convert</button>
+      </div>
+
+    </div>
+    <footer className="footer">
         <p>&copy; 2024 FileFlex. All rights reserved.</p>
       </footer>
     </div>

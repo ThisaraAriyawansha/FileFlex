@@ -3,7 +3,7 @@ import mammoth from 'mammoth';
 import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import 'pdfjs-dist/web/pdf_viewer.css';
 import { Container, Grid, Typography, Box, CircularProgress, Paper, Button } from '@mui/material';
-import './Analyze.css';
+import './Analyze.css'; // Assuming this file contains additional styles
 import Navbar from './Navbar';
 
 const App = () => {
@@ -95,10 +95,24 @@ const App = () => {
     <div className="app-container">
       <Navbar />
       <Container maxWidth="lg" className="main-content">
-        <Box my={4}>
-          <Typography variant="h3" component="h1" align="center" gutterBottom className="typography-header">
-            <h1>Document Analyzer</h1>
-          </Typography>
+                <Box my={4}>
+                <Typography
+  component="h1"
+  align="center"
+  gutterBottom
+  style={{
+    fontFamily: 'Times New Roman, Times, serif',
+    color: '#ffffff',  // Adjust the text color as needed
+    fontSize: '50px',  // Adjust the font size as needed
+    marginBottom: '20px',  // Adjust the margin bottom as needed
+    animation: 'fadeInUp 1s ease-out'  // Adjust the animation as needed
+  }}
+>
+  Document Analyzer
+</Typography>
+
+
+
           <Box my={2} display="flex" justifyContent="center">
             <input type="file" onChange={handleFileChange} accept=".pdf, .docx" />
           </Box>
