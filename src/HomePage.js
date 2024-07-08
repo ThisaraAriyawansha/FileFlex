@@ -5,13 +5,11 @@ import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import { saveAs } from 'file-saver';
 import htmlDocx from 'html-docx-js/dist/html-docx';
 import mammoth from 'mammoth';
-import converterBtnImg from './images/converterbtn.jpg'; // Correct image path
-import './HomePage.css'; // Import CSS file
+import './HomePage.css';
 import * as pdfjsLib from 'pdfjs-dist';
-import 'pdfjs-dist/webpack'; // Correct import for pdfjs-dist
+import 'pdfjs-dist/webpack';
 import { PDFDocument } from 'pdf-lib';
 import Navbar from './Navbar';
-
 
 registerPlugin(FilePondPluginFileValidateType);
 
@@ -43,7 +41,6 @@ function HomePage() {
 
   const convertPdfToDocx = async (file) => {
     try {
-      console.log('Starting PDF to DOCX conversion');
       const arrayBuffer = await file.arrayBuffer();
       const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       const totalPages = pdfDoc.numPages;
@@ -52,29 +49,22 @@ function HomePage() {
       for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
         const page = await pdfDoc.getPage(pageNumber);
         const textContent = await page.getTextContent();
-        console.log(`Extracting text from page ${pageNumber}`);
         textContent.items.forEach((item) => {
           text += item.str + '\n';
         });
         if (pageNumber < totalPages) {
-          text += '\f'; // Add page break character for each page except the last one
+          text += '\f';
         }
       }
 
-      console.log('Extracted text:', text);
-
-      // Remove unsupported characters
-      // eslint-disable-next-line no-control-regex
       text = text.replace(/[^\x00-\x7F]/g, ' ');
 
       const htmlContent = `<html><body><p>${text.replace(/\n/g, '<br>')}</p></body></html>`;
-      console.log('Generated HTML content:', htmlContent);
       const docxBlob = htmlDocx.asBlob(htmlContent);
       saveAs(docxBlob, 'output.docx');
-      console.log('DOCX file saved successfully');
     } catch (error) {
       alert('Error converting PDF to DOCX');
-      console.error('Error details:', error);
+      console.error(error);
     }
   };
 
@@ -83,13 +73,11 @@ function HomePage() {
       const arrayBuffer = await file.arrayBuffer();
       const { value: textContent } = await mammoth.extractRawText({ arrayBuffer });
 
-      // Create a PDF document
       const pdfDoc = await PDFDocument.create();
       const page = pdfDoc.addPage();
       const { width, height } = page.getSize();
       const fontSize = 12;
 
-      // Split the text content into lines
       const lines = textContent.split('\n');
       let yOffset = height - fontSize;
 
@@ -103,7 +91,6 @@ function HomePage() {
         yOffset -= fontSize + 2;
       });
 
-      // Save the PDF document
       const pdfBytes = await pdfDoc.save();
       const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
       saveAs(pdfBlob, 'output.pdf');
@@ -114,11 +101,8 @@ function HomePage() {
   };
 
   return (
-    <div className='qq'>
-<Navbar/>
-    
     <div className="home-page">
-
+      <Navbar />
       <h1>Document Converter</h1>
       <FilePond
         files={files}
@@ -127,16 +111,8 @@ function HomePage() {
         acceptedFileTypes={['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']}
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
       />
-      <br/><br/><br/><br/><br/><br/><br/><br/>
-      <img
-        src={converterBtnImg}
-        alt="Convert"
-        onClick={handleConvert}
-        className="convert-btn"
-      />
-
-    </div>
-    <footer className="footer">
+      <button className="convert-button" onClick={handleConvert}>Convert</button>
+      <footer className="footer">
         <p>&copy; 2024 FileFlex. All rights reserved.</p>
       </footer>
     </div>
