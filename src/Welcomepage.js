@@ -82,7 +82,7 @@ const FileFlexWelcomePage = () => {
 
         {/* Footer */}
         <footer className="footer">
-          <p>&copy; 2024 FileFlex. All rights reserved.</p>
+          <p>&copy; 20244 FileFlex. All rights reserved.</p>
         </footer>
       </div>
     </div>
