@@ -44,7 +44,7 @@ const FileFlexWelcomePage = () => {
               transition={{ duration: 1 }}
             >
               <br/>
-              FileFlexxx
+              FileFlex
             </motion.h1>
             <motion.p
               className="subtitle"
