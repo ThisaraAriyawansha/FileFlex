@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 490px;
   text-align: center;
   font-family: 'Arial', sans-serif;
   color: #333;
@@ -25,11 +25,11 @@ body {
 }
 
 /* Styling for the main heading */
-h1 {
+.main-heading {
   font-size: 36px;
   margin-bottom: 20px;
   font-family: 'Times New Roman', Times, serif;
-  color: #333;
+  color: #ffffff;
   animation: fadeInUp 1s ease-out;
 }
 
@@ -77,44 +77,26 @@ h1 {
   }
 }
 
-/* Styling for Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #e0f7fa;
-  padding: 10px 20px;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000; /* Ensure it's above other content */
-}
 
-/* Styling for navigation links */
-.navbar a {
-  text-decoration: none;
-  color: #007bff;
-  margin: 0 10px;
-  font-size: 18px;
-}
 
-/* Styling for navigation links on hover */
-.navbar a:hover {
-  color: #0056b3;
-}
-
-/* Styling for Footer */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #e0f7fa;
-  color: #007bff;
-  padding: 10px 0;
+  padding: 20px;
   text-align: center;
-  font-family: 'Arial', sans-serif;
-  z-index: 1000; /* Ensure it's above other content */
+  background-color: #a7d7f1;
+  margin-top: 20px;
+  max-height: 15px;
+}
+
+.footer p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
